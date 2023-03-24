@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /Y &quot;$(TargetDir)*.*&quot; &quot;C:\Repos\mToolkitFramework\mToolkit Platform Desktop Application\bin\Debug\net6.0-windows\Tools\UltimatePlanner\&quot;&#xA;" />
+  </Target>
+
+  <ItemGroup>
+    <Reference Include="mToolkit Platform Component Library">
+      <HintPath>..\..\mToolkitFramework\mToolkit Platform Component Library\bin\Debug\net6.0-windows\mToolkit Platform Component Library.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mToolkit Platform Desktop Launcher">
+      <HintPath>..\..\mToolkitFramework\mToolkit Platform Desktop Application\bin\Debug\net6.0-windows\mToolkit Platform Desktop Launcher.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mToolkitFrameworkExtensions">
+      <HintPath>..\..\mToolkitFrameworkExtensions\bin\Debug\net6.0-windows\mToolkitFrameworkExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
